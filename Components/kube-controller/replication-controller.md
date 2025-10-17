@@ -70,7 +70,7 @@ spec:                               # Defines whats inside the object you are cr
         image: nginx
 
   replicas: 3
-  selector:                          # Diff between replication controller and replicaset. Required by Replica Set, optional for Controllers. Tells it what     pods fall under it. If there are pods created that match the selector that were created before replicaset, those will also be considered.
+  selector:                          # Diff between replication controller and replicaset. Required by Replica Set, optional for Controllers. Tells it what pods fall under it. If there are pods created that match the selector that were created before replicaset, those will also be considered.
     matchLabels:
       type: front-end                # All Pods that container the "type: front-end" label will match. This is why setting labels is important.
 ```

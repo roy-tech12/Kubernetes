@@ -51,3 +51,4 @@ kubectl get all.                        # display all objects created at once.
 
 kubectl apply -f deployment-definit.yaml  # if the deployment doesnt exist, it creates based on the manifest file. if it does exist, it updates it based on the manifiest file.
 ```
+
