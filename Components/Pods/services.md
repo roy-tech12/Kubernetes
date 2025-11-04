@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # 🔥 Services
+=======
+# 🔥  Services
+>>>>>>> 751feb4914469dbf087cdd7a664650e514440ab5
 
 Service Types
 - NodePort
