@@ -19,6 +19,7 @@ apiVersion: v1                # API Version
 kind: Pod                     # Type of object
 metadata:                     # Information about the pod (must match k8s expectations)
   name: myapp-pod             # Pod name
+  namespace: dev              # namespace . will use default if not specified.
   labels:                     # Key-value pairs (used for selectors, organization)
     app: nginx
     tier: frontend

@@ -17,6 +17,24 @@ resources in different namespaces can communicate with each other. they must app
 - kube-public → publicly readable data (e.g., cluster info ConfigMap).
 - kube-node-lease → holds node lease objects for faster node heartbeat checks.
 
+# Across Namespaces
+
+- services in a particular namespace can communicate with a service in another namespace by appending the namespace to the name of the service
+- db-device.dev.svc.cluster.local
+    - dev is the namespace name
+    - cluster.local is the default domain name
+    - svc is the sub-domain
+
+# Namespace
+
+```yaml
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  namespace: dev
+```
+
 # Namespace Commands
 
 ```bash
@@ -30,6 +48,9 @@ kubectl create namespace dev
 # View details
 kubectl describe namespace dev
 
+# Create a pod in another namespace
+kubectl create -f pod-definition.yml --namespace=dev
+
 # Run a pod in a namespace
 kubectl run nginx --image=nginx -n dev
 
@@ -39,4 +60,29 @@ kubectl config set-context --current --namespace=dev
 # Delete a namespace (deletes ALL resources inside!)
 kubectl delete ns dev
 
+# retrieves a list of pods across all namespaces
+kubectl get pods --all-namespace
+
 ```
+
+
+# Resource Quota
+
+- namespace allow you to limit the amount of resources they consume via ResourceQuota
+
+```yaml
+
+apiVersion: 1
+kind: ResourceQuota
+metadata:
+  name: compute-quota
+  namespace: dev
+spec:
+  hard:
+    pods: "10"
+    requests.cpu: "4"
+    requests.memory: 5Gi
+    limits.cpu: "10"
+    limits.memory: 10Gi
+```
+
