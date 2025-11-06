@@ -25,7 +25,7 @@ spec:
       name: myapp-pod             
       labels:                    # pod object label
         app: nginx
-        tier: frontend
+        tier: front-end
     spec:
       containers:
       - name: nginx
