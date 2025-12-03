@@ -50,5 +50,7 @@ kubectl get replicaset                  # displays the replicaset created by the
 kubectl get all.                        # display all objects created at once.
 
 kubectl apply -f deployment-definit.yaml  # if the deployment doesnt exist, it creates based on the manifest file. if it does exist, it updates it based on the manifiest file.
+
+kubectl create deployment blue --image=nginx --replicas=3 # imperative command to create a deployment
 ```
 

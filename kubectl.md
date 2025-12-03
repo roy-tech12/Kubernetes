@@ -10,6 +10,11 @@ kubectl api-resources
 
  kubectl explain pods.field
  - lists the fields within pods.field section.
+ - example
+ 
+ ```bash
+ kubectl explain pods.spec.affinity # lists the fields available under pods.spec.affinity
+ ```
 
  kubectl explain pods --recursive
  - lists all fields the way you should put them in a yaml file.
