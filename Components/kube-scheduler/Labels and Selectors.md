@@ -34,5 +34,6 @@ spec:
   replicas: 3
   selector:                    
     matchLabels:
-      tier: front-end          # match the pod object label      
+      tier: front-end          # match the pod object label  
+      app: nginx    
 ```

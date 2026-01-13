@@ -41,5 +41,5 @@ metadata:
 - if a node has no restriction, it will accept any pods regardless of its toleration
 
 ```bash
-kubectl describe node kubemaster | grep  Taint # by default master node will not accept any pods on it. master node is reserved for management plane.
+kubectl describe node kubemaster | grep  Taints # by default master node will not accept any pods on it. master node is reserved for management plane.
 ```
